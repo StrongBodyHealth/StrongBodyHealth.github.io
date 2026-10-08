@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule an Appointment | StrongBodyHealth</title>
     <link rel="stylesheet" href="style.css">
+    <script src="content.js" defer></script>
 </head>
 
 <body>
@@ -27,9 +28,9 @@
     <section class="centered">
         <h2>Congratulations!</h2>
 
-        <p>
-            Based on your responses, you meet the initial inclusion criteria for GLP-1 therapy. Here is how to proceed:
-        </p>
+        <div data-content="Qualified Intro">
+            <p>Based on your responses, you meet the initial inclusion criteria for GLP-1 therapy. Here is how to proceed:</p>
+        </div>
 
         <ol class="price-list">
             <li>Schedule your 45-minute consultation (video or phone) and pay the $125 consultation fee.</li>
@@ -42,13 +43,13 @@
             </li>
         </ol>
 
-        <p class="fine-print">
-            Payment at this stage is only for the consultation with a board-certified physician. Final prescription costs will be determined at the time of your consultation and depend largely on which GLP-1 is selected and whether you prefer compounded or standard medication.
-        </p>
+        <div class="fine-print" data-content="Qualified Fine Print">
+            <p>Payment at this stage is only for the consultation with a board-certified physician.</p>
+        </div>
 
-        <p>
-            Please choose a time below to schedule an initial appointment.
-        </p>
+        <div data-content="Qualified Scheduling Description">
+            <p>Please choose a time below to schedule an initial appointment.</p>
+        </div>
 
         <!-- Calendly inline widget begin -->
         <div class="calendly-inline-widget"
