@@ -1,29 +1,74 @@
 /* ------------------------------
-   GENERAL PAGE SETTINGS
+   COLOR PALETTE
 ------------------------------ */
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f7f8fa;
-    color: #222;
-    line-height: 1.6;
+:root {
+    --navy: #010938;
+    --ice: #E8EFFC;
+    --deep-purple: #45157D;
+    --purple: #6549AF;
+    --blue: #3148B0;
+    --white: #FFFFFF;
 }
 
 
 /* ------------------------------
-   HEADER
+   GENERAL PAGE SETTINGS
+------------------------------ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--ice);
+    color: var(--navy);
+    line-height: 1.65;
+}
+
+h2,
+h3 {
+    color: var(--deep-purple);
+}
+
+h2 {
+    margin-top: 0;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+}
+
+a {
+    color: var(--blue);
+}
+
+
+/* ------------------------------
+   HEADER / BRAND
 ------------------------------ */
 
 header {
-    background-color: white;
-    padding: 20px;
+    background-color: var(--navy);
+    padding: 22px 20px 18px;
     text-align: center;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 4px solid var(--blue);
 }
 
-header h1 {
-    margin: 0 0 15px 0;
+.site-title {
+    margin: 0 0 14px;
+    font-family: Garamond, "Times New Roman", serif;
+    font-size: clamp(2.1rem, 5vw, 3.2rem);
+    line-height: 1;
+    color: var(--ice);
+    letter-spacing: 0.01em;
+}
+
+.brand-strong {
+    font-weight: 700;
+}
+
+.brand-health {
+    font-weight: 400;
 }
 
 
@@ -31,15 +76,25 @@ header h1 {
    NAVIGATION
 ------------------------------ */
 
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 28px;
 }
 
-nav a:hover {
-    text-decoration: underline;
+nav a {
+    text-decoration: none;
+    color: var(--ice);
+    font-weight: 700;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: var(--white);
+    border-bottom-color: var(--purple);
 }
 
 
@@ -48,34 +103,68 @@ nav a:hover {
 ------------------------------ */
 
 main {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
+    max-width: 980px;
+    margin: 42px auto;
+    padding: 0 22px;
 }
 
 section {
-    background-color: white;
-    padding: 35px;
-    border-radius: 8px;
+    background-color: var(--white);
+    padding: clamp(26px, 5vw, 48px);
+    border-radius: 16px;
     margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(1, 9, 56, 0.08);
 }
 
 
 /* ------------------------------
-   HOMEPAGE / HERO
+   HOMEPAGE
 ------------------------------ */
 
-.top_intro {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+.mission-section {
+    background: linear-gradient(135deg, var(--navy), var(--deep-purple));
+    color: var(--ice);
+    padding-top: clamp(42px, 7vw, 72px);
+    padding-bottom: clamp(42px, 7vw, 72px);
 }
 
-.headshot {
-    width: 250px;
-    max-width: 100%;
-    border-radius: 10px;
+.mission-section h2 {
+    color: var(--white);
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    margin-bottom: 18px;
+}
+
+.mission-description {
+    max-width: 720px;
+    font-size: 1.12rem;
+    margin-bottom: 24px;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: var(--ice);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.doctor-section {
+    overflow: auto;
+}
+
+.doctor-bio {
+    font-size: 1.03rem;
+}
+
+.doctor-photo {
+    width: 230px;
+    max-width: 42%;
+    float: left;
+    margin: 4px 26px 14px 0;
+    border-radius: 14px;
+    border: 4px solid var(--ice);
+    box-shadow: 0 8px 22px rgba(1, 9, 56, 0.14);
 }
 
 
@@ -84,10 +173,30 @@ section {
 ------------------------------ */
 
 .resource-card {
-    margin-top: 25px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    margin-top: 24px;
+    padding: 24px;
+    background-color: var(--ice);
+    border: 1px solid rgba(49, 72, 176, 0.22);
+    border-left: 6px solid var(--blue);
+    border-radius: 12px;
+}
+
+.resource-card-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.resource-card-image {
+    width: 180px;
+    height: 125px;
+    object-fit: cover;
+    flex: 0 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 16px rgba(1, 9, 56, 0.14);
 }
 
 
@@ -95,12 +204,50 @@ section {
    FAQS
 ------------------------------ */
 
-.question-answer {
-    margin-top: 20px;
+.faq-section {
+    background-color: var(--white);
 }
 
-.question-answer h3 {
-    margin-bottom: 8px;
+.faq-item {
+    border: 1px solid rgba(49, 72, 176, 0.28);
+    border-radius: 10px;
+    margin: 14px 0;
+    overflow: hidden;
+    background-color: var(--ice);
+}
+
+.faq-item summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 18px 20px;
+    color: var(--navy);
+    font-weight: 700;
+    position: relative;
+    padding-right: 52px;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--purple);
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.faq-item[open] summary::after {
+    content: "−";
+}
+
+.faq-item p {
+    margin: 0;
+    padding: 0 20px 20px;
 }
 
 
@@ -110,44 +257,99 @@ section {
 
 .button {
     display: inline-block;
-    padding: 10px 18px;
+    padding: 12px 20px;
     margin-top: 10px;
-
-    background-color: #333;
-    color: white;
-
+    background-color: var(--deep-purple);
+    color: var(--white);
     text-decoration: none;
-    border-radius: 5px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font: inherit;
+    transition: transform 0.15s ease, background-color 0.15s ease;
 }
 
-.button:hover {
-    opacity: 0.85;
+.button:hover,
+.button:focus-visible {
+    background-color: var(--purple);
+    transform: translateY(-1px);
+}
+
+.mission-section .button {
+    background-color: var(--ice);
+    color: var(--navy);
+}
+
+.mission-section .button:hover,
+.mission-section .button:focus-visible {
+    background-color: var(--white);
+}
+
+.secondary-button {
+    display: inline-block;
+    padding: 11px 18px;
+    margin: 10px 0 0 10px;
+    color: var(--deep-purple);
+    background-color: transparent;
+    border: 2px solid var(--purple);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
 }
 
 
 /* ------------------------------
-   PLACEHOLDERS
+   SURVEY SHARE SECTION
 ------------------------------ */
 
-.placeholder {
-    margin-top: 30px;
-    padding: 40px;
-
+.share-survey {
     text-align: center;
+}
 
-    border: 2px dashed #bbb;
-    border-radius: 8px;
+.share-survey p {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-    color: #777;
+.survey-qr {
+    display: block;
+    width: 190px;
+    max-width: 70%;
+    height: auto;
+    margin: 24px auto 14px;
+    padding: 10px;
+    background-color: var(--white);
+    border: 3px solid var(--blue);
+    border-radius: 12px;
+}
+
+.share-status {
+    min-height: 1.5em;
+    margin-top: 12px;
+    color: var(--deep-purple);
+    font-size: 0.95rem;
 }
 
 
 /* ------------------------------
-   CENTERED PAGES
+   CENTERED / SUPPORTING TEXT
 ------------------------------ */
 
 .centered {
     text-align: center;
+}
+
+.price-list {
+    text-align: left;
+    display: inline-block;
+    margin: 0 auto 18px;
+}
+
+.fine-print {
+    font-style: italic;
+    font-size: 0.95rem;
 }
 
 
@@ -158,7 +360,7 @@ section {
 footer {
     text-align: center;
     padding: 30px;
-    color: #666;
+    color: var(--navy);
     font-size: 14px;
 }
 
@@ -169,14 +371,51 @@ footer {
 
 @media (max-width: 700px) {
 
-    .top_intro {
+    header {
+        padding-bottom: 14px;
+    }
+
+    nav {
         flex-direction: column;
-        text-align: center;
+        gap: 4px;
     }
 
     nav a {
         display: block;
-        margin: 10px;
+        padding: 6px;
     }
 
+    main {
+        margin-top: 24px;
+        padding: 0 14px;
+    }
+
+    section {
+        border-radius: 12px;
+    }
+
+    .doctor-photo {
+        float: none;
+        display: block;
+        width: 220px;
+        max-width: 100%;
+        margin: 0 auto 22px;
+    }
+
+    .resource-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .resource-card-image {
+        width: 100%;
+        height: 190px;
+        order: 2;
+    }
+
+    .secondary-button {
+        display: block;
+        width: fit-content;
+        margin: 12px auto 0;
+    }
 }
