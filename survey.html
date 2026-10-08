@@ -75,11 +75,11 @@
             if (navigator.share && navigator.canShare && navigator.canShare({ files: [qrFile] })) {
                 await navigator.share({
                     title: 'StrongBodyHealth Eligibility Survey',
-                    text: 'Scan this QR code to open the StrongBodyHealth eligibility survey.',
+                    text: 'Scan this QR code to open the StrongBodyHealth GLP-1 eligibility survey.',
                     url: surveyUrl,
                     files: [qrFile]
                 });
-                shareStatus.textContent = 'The share menu was opened.';
+                shareStatus.textContent = 'Share the QR code!';
                 return;
             }
 
@@ -99,7 +99,7 @@
                 return;
             }
 
-            shareStatus.textContent = 'Use the “Save QR Code” button, then send the image by text or email.';
+            shareStatus.textContent = 'You can use the “Save QR Code” button, then send the image by text or email.';
         } catch (error) {
             shareStatus.textContent = 'Use the “Save QR Code” button, then send the image by text or email.';
         }
