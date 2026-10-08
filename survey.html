@@ -4,44 +4,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>GLP-1 Eligibility Survey | StrongBodyHealth</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-
-    <h1>StrongBodyHealth</h1>
+    <h1 class="site-title">
+        <span class="brand-strong">StrongBody</span><span class="brand-health">Health</span>
+    </h1>
 
     <nav>
         <a href="index.html">About</a>
         <a href="survey.html">See If You Qualify</a>
         <a href="resources.html">Resources</a>
     </nav>
-
 </header>
 
 <main>
 
     <section>
-
         <h2>Initial Eligibility Survey</h2>
 
         <p>
-            Please complete the following survey to determine whether
-            you may qualify for an initial appointment.
+            Please complete the following survey to determine whether you may qualify for an initial appointment.
         </p>
 
-       <script type="text/javascript"
-        src="https://form.jotform.com/jsform/260387719515061">
-       </script>
+        <script type="text/javascript"
+            src="https://form.jotform.com/jsform/260387719515061">
+        </script>
+    </section>
 
+    <section class="share-survey">
+        <h2>Share This Survey</h2>
+
+        <p>
+            Know someone who may be interested? Share the QR code below so they can open the StrongBodyHealth eligibility survey on their phone.
+        </p>
+
+        <img
+            src="images/SurveyQR.png"
+            alt="QR code linking to the StrongBodyHealth eligibility survey"
+            class="survey-qr">
+
+        <button class="button" id="shareQrButton" type="button">Share QR Code</button>
+
+        <a class="secondary-button" href="images/SurveyQR.png" download="StrongBodyHealth-Survey-QR.png">
+            Save QR Code
+        </a>
+
+        <p class="share-status" id="shareStatus" aria-live="polite"></p>
     </section>
 
 </main>
+
+<script>
+    const shareButton = document.getElementById('shareQrButton');
+    const shareStatus = document.getElementById('shareStatus');
+
+    shareButton.addEventListener('click', async () => {
+        const surveyUrl = 'https://strongbodyhealth.github.io/survey.html';
+
+        try {
+            const response = await fetch('images/SurveyQR.png');
+            const blob = await response.blob();
+            const qrFile = new File([blob], 'StrongBodyHealth-Survey-QR.png', { type: blob.type || 'image/png' });
+
+            if (navigator.share && navigator.canShare && navigator.canShare({ files: [qrFile] })) {
+                await navigator.share({
+                    title: 'StrongBodyHealth Eligibility Survey',
+                    text: 'Scan this QR code to open the StrongBodyHealth eligibility survey.',
+                    url: surveyUrl,
+                    files: [qrFile]
+                });
+                shareStatus.textContent = 'The share menu was opened.';
+                return;
+            }
+
+            if (navigator.share) {
+                await navigator.share({
+                    title: 'StrongBodyHealth Eligibility Survey',
+                    text: 'Open the StrongBodyHealth eligibility survey:',
+                    url: surveyUrl
+                });
+                shareStatus.textContent = 'The survey link was shared. You can also save the QR code above.';
+                return;
+            }
+
+            if (navigator.clipboard) {
+                await navigator.clipboard.writeText(surveyUrl);
+                shareStatus.textContent = 'Sharing is not supported in this browser, so the survey link was copied to your clipboard.';
+                return;
+            }
+
+            shareStatus.textContent = 'Use the “Save QR Code” button, then send the image by text or email.';
+        } catch (error) {
+            shareStatus.textContent = 'Use the “Save QR Code” button, then send the image by text or email.';
+        }
+    });
+</script>
 
 </body>
 </html>
