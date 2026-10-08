@@ -1,0 +1,55 @@
+Mission Description:
+StrongBodyHealth provides physician-guided care for patients who may benefit from GLP-1 medications and related weight-management support. Our goal is to make the process clear, individualized, and medically responsible from initial screening through ongoing care.
+
+Doctor Bio:
+Dr. Rhonda Hamilton is the physician behind StrongBodyHealth. She provides individualized medical weight-management care and works with patients to determine whether GLP-1 medications may be appropriate as part of a broader treatment plan.
+
+Her approach emphasizes thoughtful evaluation, clear communication, and treatment decisions tailored to each patient’s needs, goals, and medical history.
+
+Survey Description:
+Please complete the following survey to determine whether you may qualify for an initial appointment.
+
+Share Survey Description:
+Know someone who may be interested? Share the QR code below so they can open the StrongBodyHealth eligibility survey on their phone.
+
+Resources Description:
+Below are informational resources that you may view or download.
+
+Handout 1 Description:
+A short description of this resource.
+
+Handout 2 Description:
+A short description of this resource.
+
+FAQ 1 Question:
+Add your first frequently asked question here.
+
+FAQ 1 Answer:
+Add your answer here.
+
+FAQ 2 Question:
+Add your second frequently asked question here.
+
+FAQ 2 Answer:
+Add your answer here.
+
+FAQ 3 Question:
+Add your third frequently asked question here.
+
+FAQ 3 Answer:
+Add your answer here.
+
+Qualified Intro:
+Based on your responses, you meet the initial inclusion criteria for GLP-1 therapy. Here is how to proceed:
+
+Qualified Fine Print:
+Payment at this stage is only for the consultation with a board-certified physician. Final prescription costs will be determined at the time of your consultation and depend largely on which GLP-1 is selected and whether you prefer compounded or standard medication.
+
+Qualified Scheduling Description:
+Please choose a time below to schedule an initial appointment.
+
+Not Qualified Description:
+Based on your answers, you are not eligible for GLP-1 medications through our program.
+
+Not Qualified Follow-up:
+We encourage you to speak with your primary care provider about other weight-management options. You may exit this page or use the link below to explore the resources we provide for weight management.
