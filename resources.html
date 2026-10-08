@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources & FAQs | StrongBodyHealth</title>
     <link rel="stylesheet" href="style.css">
+    <script src="content.js" defer></script>
 </head>
 
 <body>
@@ -27,17 +28,17 @@
     <section>
         <h2>Resources</h2>
 
-        <p>
-            Below are informational resources that you may view or download.
-        </p>
+        <div data-content="Resources Description">
+            <p>Below are informational resources that you may view or download.</p>
+        </div>
 
         <div class="resource-card">
             <div class="resource-card-body">
                 <h3>Handout 1</h3>
 
-                <p>
-                    A short description of this resource.
-                </p>
+                <div data-content="Handout 1 Description">
+                    <p>A short description of this resource.</p>
+                </div>
 
                 <a class="button"
                    href="handouts/handout1.pdf"
@@ -59,9 +60,9 @@
             <div class="resource-card-body">
                 <h3>Handout 2</h3>
 
-                <p>
-                    A short description of this resource.
-                </p>
+                <div data-content="Handout 2 Description">
+                    <p>A short description of this resource.</p>
+                </div>
 
                 <a class="button"
                    href="handouts/handout2.pdf"
@@ -82,21 +83,11 @@
 
     <section class="faq-section">
         <h2>Frequently Asked Questions</h2>
-
-        <details class="faq-item">
-            <summary>Question text</summary>
-            <p>Answer text</p>
-        </details>
-
-        <details class="faq-item">
-            <summary>Question text</summary>
-            <p>Answer text</p>
-        </details>
-
-        <details class="faq-item">
-            <summary>Question text</summary>
-            <p>Answer text</p>
-        </details>
+        <div data-faq-container>
+            <details class="faq-item">
+                <summary>Loading FAQs...</summary>
+            </details>
+        </div>
     </section>
 
 </main>
